@@ -1,18 +1,19 @@
 <template>
   <Header></Header>
+  <SignUpForm></SignUpForm>
   <Footer></Footer>
 </template>
 
 <script>
-// @ is an alias to /src
+import SignUpForm from "@/components/SignUpForm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
 export default {
-  name: 'HomeView',
-  components: {
-    Footer,
-    Header,
-  }
+  name: "SignUpView",
+  components: {Footer, Header, SignUpForm}
 }
 </script>
+
+<style scoped>
+
+</style>
