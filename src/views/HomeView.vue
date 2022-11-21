@@ -1,6 +1,5 @@
 <template>
-  <Header></Header>
-  <Footer></Footer>
+  <p>Main page</p>
 </template>
 
 <script>

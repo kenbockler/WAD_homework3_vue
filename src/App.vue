@@ -1,5 +1,7 @@
 <template>
+  <Header></Header>
   <router-view id="app"></router-view>
+  <Footer></Footer>
 </template>
 
 <style>
@@ -28,7 +30,9 @@ nav a.router-link-exact-active {
 </style>
 <script>
 import HomeView from "@/views/HomeView";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 export default {
-  components: {HomeView}
+  components: {Footer, Header, HomeView}
 }
 </script>

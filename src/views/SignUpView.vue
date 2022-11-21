@@ -1,7 +1,5 @@
 <template>
-  <Header></Header>
   <SignUpForm></SignUpForm>
-  <Footer></Footer>
 </template>
 
 <script>
