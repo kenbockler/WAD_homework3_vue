@@ -14,7 +14,7 @@ export default createStore({
         posts: [{
             id: 1,
             create_time: "Oct 22, 2022",
-            images: "res/images/tartu2024_2.png",
+            images: "tartu2024_2.png",
             alt: "Tartu 2024 image",
             body: "Tartu 2022"
         },
@@ -35,7 +35,7 @@ export default createStore({
             {
                 id: 4,
                 create_time: "Sep 29, 2022",
-                images: "res/images/tallinn.png",
+                images: "tallinn.png",
                 alt: "Tallinn image",
                 body: "Tallinn 2022"
             },
