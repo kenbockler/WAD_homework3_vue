@@ -88,7 +88,7 @@ export default createStore({
                 create_time: "Sep 5, 2022",
                 images: "",
                 alt: "",
-                body: "Back to school!!",
+                body: "Back to school again!!!!!!!",
                 likes: 5
             }
         ]

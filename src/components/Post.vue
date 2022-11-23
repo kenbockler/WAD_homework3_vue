@@ -132,9 +132,13 @@ p {
     max-width: 230px;
     min-width: 100px;
     padding: 1em;
-    font-size: 2em;
+    font-size: 1.5em;
     margin-top: .5em;
     background-color: lightgrey;
+  }
+
+  .thumbsUp {
+    max-width: 40px;
   }
 
 }

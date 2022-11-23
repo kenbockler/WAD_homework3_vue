@@ -6,10 +6,10 @@
         <div v-for="post in posts" :key="post.id">
           <post-component :post="post"></post-component>
         </div>
-        <button class="resetButton" v-on:click="NullifyLikes">Reset likes</button>
       </div>
       <div class="side"></div>
     </div>
+    <button class="resetButton" v-on:click="NullifyLikes">Reset likes</button>
   </div>
 </template>
 
@@ -71,8 +71,8 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 4em;
-  margin-right: 4em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 .side {
@@ -90,5 +90,19 @@ body {
   margin-top: 1em;
   font-size: 1em;
   font-weight: bold;
+  align-self: center;
+}
+
+@media (max-width: 800px) {
+  .side {
+    display: none;
+  }
+  .mainDiv {
+    justify-content: center;
+  }
+
+  .resetButton {
+    min-width: 10em;
+  }
 }
 </style>
