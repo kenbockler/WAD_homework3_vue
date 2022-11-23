@@ -12,12 +12,12 @@ export default createStore({
             {id: 4, author: "Fyodor Dostoevsky", book: "Crime and Punishment", goodreads: "4.2/5", price: 18}
         ],
         posts: [{
-            id: 1,
-            create_time: "Oct 22, 2022",
-            images: "tartu2024_2.png",
-            alt: "Tartu 2024 image",
-            body: "Tartu 2022"
-        },
+                id: 1,
+                create_time: "Oct 22, 2022",
+                images: "https://s.err.ee/photo/crop/2019/10/14/697168h9a9dt46.jpg",
+                alt: "Tartu 2024 image",
+                body: "Tartu 2022"
+            },
             {
                 id: 2,
                 create_time: "Oct 02, 2022",
@@ -35,7 +35,7 @@ export default createStore({
             {
                 id: 4,
                 create_time: "Sep 29, 2022",
-                images: "tallinn.png",
+                images: "https://deih43ym53wif.cloudfront.net/tallinn-estonia-shutterstock_160118099_de3f1c2e1e.jpeg",
                 alt: "Tallinn image",
                 body: "Tallinn 2022"
             },

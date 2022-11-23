@@ -1,19 +1,26 @@
 <template>
-  <div id="comp-list-one">
+  <div>
     <div v-if="post.images">
       <div class="pictureBodyCard">
-        <div class="create_time"> {{ post.create_time }} </div> <br>
-        <img class="cardImage" :src="`@/assets/${post.images}`" alt=" {{ post.alt }} ">  <br>
-        <div class="alt"> {{ post.images }} </div> <br>
-        <div class="body"> {{ post.body }} </div>
+        <div class="cardHeader">
+          <img class="cardProfilePicture" src="../assets/me.png" alt="Profile picture">
+          <p> {{ post.create_time }} </p>
+        </div>
+        <img class="cardImage" :src="post.images" :alt="post.alt">
+        <p class="body"> {{ post.body }} </p>
+        <img class="thumbsUp" src="../assets/thumbs-up-regular.svg" alt="Thumbs up image">
       </div>
     </div>
     <div v-else>
       <div class="textBodyCard">
-        <div class="create_time"> {{ post.create_time }} </div> <br>
-        <div class="images"> {{ post.images }} </div> <br>
-        <div class="alt"> {{ post.alt }} </div> <br>
-        <div class="body"> {{ post.body }} </div>
+        <div class="cardHeader">
+          <img class="cardProfilePicture" src="../assets/me.png" alt="Profile picture">
+          <p> {{ post.create_time }} </p>
+        </div>
+        <div class="textCard">
+          <p> {{ post.body }} </p>
+        </div>
+        <img class="thumbsUp" src="../assets/thumbs-up-regular.svg" alt="Thumbs up image">
       </div>
     </div>
   </div>
@@ -21,31 +28,36 @@
 
 <script>
 export default {
-  name: "PostCompoOne",
+  name: "PostComponent",
   props: ["post"],
   data: function () {
     return {}
   },
   computed: {
-    posts() {
-      return this.$store.getters.posts
-    },
   }
 }
 </script>
 
 <style scoped>
-.pictureBodyCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 700px;
-  min-width: 700px;
-  padding: 1em;
-  font-size: 2em;
-  background-color: lightgrey;
+.cardProfilePicture {
+  height: 100%;
 }
-
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  margin-bottom: .5em;
+}
+.cardHeader>p {
+  align-self: center;
+}
+p {
+  text-align: start;
+}
+.imgContainer+img {
+  width: 100%;
+  height: auto;
+}
 .textBodyCard {
   display: flex;
   flex-direction: column;
@@ -54,7 +66,38 @@ export default {
   min-width: 700px;
   padding: 1em;
   font-size: 2em;
-  background-color: lightgrey;
   margin-top: .5em;
+  background-color: lightgrey;
+}
+
+.pictureBodyCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 700px;
+  min-width: 700px;
+  padding: 1em;
+  font-size: 2em;
+  margin-top: .5em;
+  background-color: lightgrey;
+}
+
+@media (max-width: 650px) {
+
+  .pictureBodyCard {
+    max-width: 12em;
+    min-width: 12em;
+  }
+
+  .textBodyCard {
+    max-width: 12em;
+    min-width: 12em;
+  }
+
+}
+
+.thumbsUp {
+  width: 60px;
+  height: auto;
 }
 </style>

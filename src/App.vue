@@ -29,10 +29,9 @@ nav a.router-link-exact-active {
 }
 </style>
 <script>
-import HomeView from "@/views/HomeView";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 export default {
-  components: {Footer, Header, HomeView}
+  components: {Footer, Header}
 }
 </script>
