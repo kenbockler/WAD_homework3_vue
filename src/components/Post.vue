@@ -20,7 +20,14 @@
         <div class="textCard">
           <p> {{ post.body }} </p>
         </div>
-        <img class="thumbsUp" src="../assets/thumbs-up-regular.svg" alt="Thumbs up image">
+        <div class="cardFooter">
+          <div v-on:click="IncreaseLikes ">
+            <img class="thumbsUp" src="../assets/thumbs-up-regular.svg" alt="Thumbs up image">
+          </div>
+          <div>
+            {{ post.likes }} likes
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -34,6 +41,18 @@ export default {
     return {}
   },
   computed: {
+    getId() {
+      console.log(post.id)
+     return post.id;
+    },
+  },
+  methods: {
+    IncreaseLikes: function () {
+      this.$store.commit("IncreaseLikes", this.getId)
+    },
+    DecreasePrice: function () {
+      this.$store.commit("DecreasePrice")
+    }
   }
 }
 </script>
@@ -94,6 +113,12 @@ p {
     min-width: 12em;
   }
 
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .thumbsUp {

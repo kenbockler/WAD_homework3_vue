@@ -16,89 +16,86 @@ export default createStore({
                 create_time: "Oct 22, 2022",
                 images: "https://s.err.ee/photo/crop/2019/10/14/697168h9a9dt46.jpg",
                 alt: "Tartu 2024 image",
-                body: "Tartu 2022"
+                body: "Tartu 2022",
+                likes: 22
             },
             {
                 id: 2,
                 create_time: "Oct 02, 2022",
                 images: "",
                 alt: "",
-                body: "Anyone knows in which room is the lab today?"
+                body: "Anyone knows in which room is the lab today?",
+                likes: 15
             },
             {
                 id: 3,
                 create_time: "Oct 01, 2022",
                 images: "",
                 alt: "",
-                body: "But why is the rum gone?"
+                body: "But why is the rum gone?",
+                likes: 2
             },
             {
                 id: 4,
                 create_time: "Sep 29, 2022",
                 images: "https://deih43ym53wif.cloudfront.net/tallinn-estonia-shutterstock_160118099_de3f1c2e1e.jpeg",
                 alt: "Tallinn image",
-                body: "Tallinn 2022"
+                body: "Tallinn 2022",
+                likes: 224
             },
             {
                 id: 5,
                 create_time: "Sep 15, 2022",
                 images: "",
                 alt: "",
-                body: "Sometimes lose, but always win"
+                body: "Sometimes lose, but always win",
+                likes: 43
             },
             {
                 id: 6,
                 create_time: "Sep 14, 2022",
                 images: "",
                 alt: "",
-                body: "Had a beer for lunch today"
+                body: "Had a beer for lunch today",
+                likes: 229
             },
             {
                 id: 7,
                 create_time: "Sep 13, 2022",
                 images: "",
                 alt: "",
-                body: "When all else fails, there's always delusion"
+                body: "When all else fails, there's always delusion",
+                likes: 1
             },
             {
                 id: 8,
                 create_time: "Sep 10, 2022",
                 images: "",
                 alt: "",
-                body: "Wake me up when the semester ends"
+                body: "Wake me up when the semester ends",
+                likes: 0
             },
             {
                 id: 9,
                 create_time: "Sep 9, 2022",
                 images: "",
                 alt: "",
-                body: "Wake me up when september ends"
+                body: "Wake me up when september ends",
+                likes: 42
             },
             {
                 id: 10,
                 create_time: "Sep 5, 2022",
                 images: "",
                 alt: "",
-                body: "Back to school!!"
+                body: "Back to school!!",
+                likes: 5
             }
         ]
     },
     getters: {
         // .map is a higher-order function that creates a new array populated with the results of
         //  calling a provided function on every element in the calling array. – Lecture 5
-
-        productListsale: state => {
-            var productListsale = state.productList.map(product => {
-                return {
-                    id: product.id,
-                    author: product.author,
-                    price: product.price / 2,
-                    book: product.book,
-                    goodreads: product.goodreads
-                }
-            });
-            return productListsale
-        },
         posts: state => {
             var posts = state.posts.map(post => {
                 return {
@@ -106,7 +103,8 @@ export default createStore({
                     create_time: post.create_time,
                     images: post.images,
                     alt: post.alt,
-                    body: post.body
+                    body: post.body,
+                    likes: post.likes
                 }
             });
             return posts
@@ -114,26 +112,25 @@ export default createStore({
     },
     mutations: {
         //The .forEach() method executes a callback function on each of the elements in an array in order. – Lecture 5
-        IncreasePrice: state => {
-            state.productList.forEach(product => {
-                product.price += 1;
-            })
+        IncreaseLikes: (state, id) => {
+            const found = state.posts.find(item => item.id === id);
+            found.likes += 1;
         },
-        DecreasePrice: state => {
-            state.productList.forEach(product => {
-                product.price -= 1;
+        NullifyLikes: state => {
+            state.posts.forEach(post => {
+                post.likes = 0;
             })
         }
     },
     actions: {
-        IncreasePriceAct: act => {
+        IncreaseLikes: act => {
             setTimeout(function () {
-                act.commit("IncreasePrice")
+                act.commit("IncreaseLikes")
             }, 100)
         },
-        DecreasePriceAct: act => {
+        NullifyLikes: act => {
             setTimeout(function () {
-                act.commit("DecreasePrice")
+                act.commit("NullifyLikes")
             }, 100)
         }
     }
