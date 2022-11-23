@@ -8,7 +8,14 @@
         </div>
         <img class="cardImage" :src="post.images" :alt="post.alt">
         <p class="body"> {{ post.body }} </p>
-        <img class="thumbsUp" src="../assets/thumbs-up-regular.svg" alt="Thumbs up image">
+        <div class="cardFooter">
+          <div v-on:click="IncreaseLikes ">
+            <img class="thumbsUp" src="../assets/thumbs-up-regular.svg" alt="Thumbs up image">
+          </div>
+          <div>
+            {{ post.likes }} likes
+          </div>
+        </div>
       </div>
     </div>
     <div v-else>
@@ -42,16 +49,12 @@ export default {
   },
   computed: {
     getId() {
-      console.log(post.id)
-     return post.id;
+     return this.post.id;
     },
   },
   methods: {
     IncreaseLikes: function () {
       this.$store.commit("IncreaseLikes", this.getId)
-    },
-    DecreasePrice: function () {
-      this.$store.commit("DecreasePrice")
     }
   }
 }

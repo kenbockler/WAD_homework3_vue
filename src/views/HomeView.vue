@@ -6,6 +6,7 @@
         <div v-for="post in posts" :key="post.id">
           <post-component :post="post"></post-component>
         </div>
+        <button class="resetButton" v-on:click="NullifyLikes">Reset likes</button>
       </div>
       <div class="side"></div>
     </div>
@@ -29,6 +30,11 @@ export default {
     posts() {
       return this.$store.getters.posts
     },
+  },
+  methods: {
+    NullifyLikes: function () {
+      this.$store.commit("NullifyLikes")
+    }
   }
 }
 </script>
@@ -76,4 +82,13 @@ body {
   background-color: lightgrey;
 }
 
+.resetButton {
+  width: 20%;
+  padding: 5px;
+  background-color: aqua;
+  border-radius: 20px;
+  margin-top: 1em;
+  font-size: 1em;
+  font-weight: bold;
+}
 </style>
