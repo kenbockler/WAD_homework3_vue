@@ -19,5 +19,6 @@ export default {
   background-color: lightgray;
   margin: 10px;
   padding: 5px;
+
 }
 </style>

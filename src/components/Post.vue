@@ -99,21 +99,42 @@ p {
   max-width: 700px;
   min-width: 700px;
   padding: 1em;
-  font-size: 2em;
+  font-size: 1.5em;
   margin-top: .5em;
   background-color: lightgrey;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 800px) {
+
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom: .5em;
+  }
 
   .pictureBodyCard {
-    max-width: 12em;
-    min-width: 12em;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    max-width: 230px;
+    min-width: 100px;
+    padding: 1em;
+    font-size: 1.5em;
+    margin-top: .5em;
+    background-color: lightgrey;
   }
 
   .textBodyCard {
-    max-width: 12em;
-    min-width: 12em;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    max-width: 230px;
+    min-width: 100px;
+    padding: 1em;
+    font-size: 2em;
+    margin-top: .5em;
+    background-color: lightgrey;
   }
 
 }
